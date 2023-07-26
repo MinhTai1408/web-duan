@@ -15,7 +15,6 @@ import {
   Select,
   Row,
   Col,
-  Form,
   Progress,
   theme,
   Calendar,
@@ -31,24 +30,17 @@ import {
 import Sider from "antd/es/layout/Sider";
 import Menu from "../Menu/Menu";
 import { Content, Header } from "antd/es/layout/layout";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCalendar,
-  faCalendarCheck,
-  faComments,
-  faLayerGroup,
-} from "@fortawesome/free-solid-svg-icons";
+
 import Card from "antd/es/card/Card";
 import Meta from "antd/es/card/Meta";
 import type { CalendarMode } from "antd/es/calendar/generateCalendar";
 import type { Dayjs } from "dayjs";
 import { DeviceWithId } from "../../features/deviceSlice";
 import { useAppSelector } from "../../hooks/storeHook";
-import { DesktopOutlined } from "@ant-design/icons";
+
 import { ServiceWithId } from "../../features/serviceSlice";
 import { CapSoWithId } from "../../features/capSoSlice";
 import AvataProfile from "../profile/AvataProfile";
-
 interface CapSoData {
   thuTu: number;
   ngayGioCap: string;

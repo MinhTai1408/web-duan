@@ -1,8 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 
-import ForgotPassword from "./login/forgot_password";
-import ForgotPasswordNew from "./login/forgot_password_new";
 
 import AuthRoutes from "../components/AuthAction";
 
@@ -33,12 +31,15 @@ import ThemVaiTro from "../components/vaitro/ThemVaiTro";
 import SuaVaiTro from "../components/vaitro/SuaVaiTro";
 import Dashboard from "./Home/home";
 
+import ForgotPassword from "./login/forgot_password";
+import ForgotNewPassword from "./login/forgot_password_new";
+
 const Defautlayout = () => {
   return (
     <div>
       <Routes>
         <Route path="/forgot" element={<ForgotPassword />} />
-        <Route path="/forgotnew" element={<ForgotPasswordNew />} />
+        <Route path="/forgotnew/:email" element={<ForgotNewPassword />} />
 
         <Route element={<AuthRoutes />}>
           <Route path="/profile" element={<Profile />} />

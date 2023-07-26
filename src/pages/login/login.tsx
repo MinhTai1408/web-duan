@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import { AuthForm } from "../../model/from";
 
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, sendPasswordResetEmail, signInWithEmailAndPassword } from "firebase/auth";
 import { auth, db } from "../../Firebase";
 
 import { useAppDispatch, useAppSelector } from "../../hooks/storeHook";
@@ -18,20 +18,20 @@ import {
   collection,
   getDocs,
   query,
-  serverTimestamp,
   updateDoc,
   where,
 } from "firebase/firestore";
 import axios from "axios";
 
+
 const Login = () => {
   const { user } = useAppSelector((state) => state.auth);
   const [errorMessage, setErrorMessage] = useState<null | string>(null);
   const [loading, setLoading] = useState(false);
-
+  
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
-
+  
   useEffect(() => {
     if (Boolean(user)) {
       navigate("/profile");
@@ -97,10 +97,12 @@ const Login = () => {
       setLoading(false);
     }
   };
-
+  
+  
   return (
     <div className="auth-container">
       <div className="auth-form-container">
+        
         <Layout>
           <Row>
             <Col flex={2}>
